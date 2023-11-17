@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using NewskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
-using NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch;
+using NevskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
+using NevskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch;
 
-namespace NewskyFond.Portal.Gateway.Api.Mapper
+namespace NevskyFond.Portal.Gateway.Api.Mapper
 {
     public class ChurchMapper : Profile
     {

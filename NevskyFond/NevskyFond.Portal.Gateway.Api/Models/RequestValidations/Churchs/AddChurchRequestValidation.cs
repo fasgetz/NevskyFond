@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
-using NewskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
+using NevskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
 
-namespace NewskyFond.Portal.Gateway.Api.Models.RequestValidations.Churchs
+namespace NevskyFond.Portal.Gateway.Api.Models.RequestValidations.Churchs
 {
     public class AddChurchRequestValidation : AbstractValidator<AddChurchRequest>
     {

@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace NewskyFond.Portal.Gateway.Api.Controllers
+namespace NevskyFond.Portal.Gateway.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

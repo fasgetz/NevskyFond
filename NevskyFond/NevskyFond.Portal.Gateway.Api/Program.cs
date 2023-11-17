@@ -1,16 +1,15 @@
-
 using FluentValidation;
 using FluentValidation.AspNetCore;
 using MassTransit;
 using Microsoft.OpenApi.Models;
-using NewskyFond.Portal.Gateway.Api.Mapper;
-using NewskyFond.Portal.Gateway.Api.Models.RequestValidations.Churchs;
-using NewskyFond.Portal.Gateway.Api.Models.Settings;
-using NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch;
+using NevskyFond.Portal.Gateway.Api.Mapper;
+using NevskyFond.Portal.Gateway.Api.Models.RequestValidations.Churchs;
+using NevskyFond.Portal.Gateway.Api.Models.Settings;
+using NevskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 
-namespace NewskyFond.Portal.Gateway.Api
+namespace NevskyFond.Portal.Gateway.Api
 {
     public class Program
     {

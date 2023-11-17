@@ -1,4 +1,4 @@
-namespace NewskyFond.Portal.Gateway.Api
+namespace NevskyFond.Portal.Gateway.Api
 {
     public class WeatherForecast
     {

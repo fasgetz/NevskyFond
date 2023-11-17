@@ -1,4 +1,4 @@
-﻿namespace NewskyFond.Portal.Gateway.Api.Models.Settings
+﻿namespace NevskyFond.Portal.Gateway.Api.Models.Settings
 {
     public class RabbitMqOptions
     {

@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using NewskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
-using NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch;
+using NevskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
+using NevskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch;
 
-namespace NewskyFond.Portal.Gateway.Api.Controllers
+namespace NevskyFond.Portal.Gateway.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]

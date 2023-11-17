@@ -15,12 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\ResponseExamples\" />
-    <Folder Include="Models\Responses\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\NewskyFond.Portal.Gateway.Infrastructure\NewskyFond.Portal.Gateway.Infrastructure.csproj" />
+    <ProjectReference Include="..\NevskyFond.Portal.Gateway.Infrastructure\NevskyFond.Portal.Gateway.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

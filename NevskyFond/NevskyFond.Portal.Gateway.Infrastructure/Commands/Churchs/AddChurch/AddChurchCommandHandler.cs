@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
+namespace NevskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
 {
     public class AddChurchCommandHandler : IRequestHandler<AddChurchCommand, AddChurchCommandResult>
     {

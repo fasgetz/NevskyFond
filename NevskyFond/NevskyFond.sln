@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{929FA4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewskyFond.Portal.Gateway.Api", "NewskyFond.Portal.Gateway.Api\NewskyFond.Portal.Gateway.Api.csproj", "{9F71F010-0DEF-41EF-8631-F878D260D8F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Portal.Gateway.Api", "NevskyFond.Portal.Gateway.Api\NevskyFond.Portal.Gateway.Api.csproj", "{9F71F010-0DEF-41EF-8631-F878D260D8F9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewskyFond.Portal.Gateway.Infrastructure", "NewskyFond.Portal.Gateway.Infrastructure\NewskyFond.Portal.Gateway.Infrastructure.csproj", "{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Gateway.Infrastructure", "NevskyFond.Portal.Gateway.Infrastructure\NevskyFond.Portal.Gateway.Infrastructure.csproj", "{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Infrastructure", "NevskyFond.Portal.Infrastructure\NevskyFond.Portal.Infrastructure.csproj", "{F9980628-8AD6-476C-82E0-7C36E9070F4A}"
 EndProject

@@ -1,4 +1,4 @@
-﻿namespace NewskyFond.Portal.Gateway.Api.Models.Requests.Churchs
+﻿namespace NevskyFond.Portal.Gateway.Api.Models.Requests.Churchs
 {
     /// <summary>
     /// Добавление религиозного учреждения

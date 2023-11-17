@@ -1,7 +1,7 @@
-﻿using NewskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
+﻿using NevskyFond.Portal.Gateway.Api.Models.Requests.Churchs;
 using Swashbuckle.AspNetCore.Filters;
 
-namespace NewskyFond.Portal.Gateway.Api.Models.RequestExamples.Churchs
+namespace NevskyFond.Portal.Gateway.Api.Models.RequestExamples.Churchs
 {
     public class AddChurchRequestExample : IExamplesProvider<AddChurchRequest>
     {
