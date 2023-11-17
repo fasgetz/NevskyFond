@@ -1,5 +1,4 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,8 +6,13 @@ using System.Threading.Tasks;
 
 namespace NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
 {
-    public class AddChurchCommand : IRequest<AddChurchCommandResult>
+    public class AddChurchCommandResult
     {
+        /// <summary>
+        /// ID религиозного учреждения
+        /// </summary>
+        public int Id { get; set; }
+
         /// <summary>
         /// Название
         /// </summary>

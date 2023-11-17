@@ -9,7 +9,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{929FA4
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewskyFond.Portal.Gateway.Api", "NewskyFond.Portal.Gateway.Api\NewskyFond.Portal.Gateway.Api.csproj", "{9F71F010-0DEF-41EF-8631-F878D260D8F9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewskyFond.Portal.Gateway.Api", "NewskyFond.Portal.Gateway.Api\NewskyFond.Portal.Gateway.Api.csproj", "{9F71F010-0DEF-41EF-8631-F878D260D8F9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewskyFond.Portal.Gateway.Infrastructure", "NewskyFond.Portal.Gateway.Infrastructure\NewskyFond.Portal.Gateway.Infrastructure.csproj", "{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Infrastructure", "NevskyFond.Portal.Infrastructure\NevskyFond.Portal.Infrastructure.csproj", "{F9980628-8AD6-476C-82E0-7C36E9070F4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Data", "NevskyFond.Portal.Data\NevskyFond.Portal.Data.csproj", "{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Domain", "NevskyFond.Portal.Domain\NevskyFond.Portal.Domain.csproj", "{254DCE70-D7BE-4401-B2C2-1229FB661549}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C639FE22-0D27-488D-AAB8-625E9434F876}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +35,22 @@ Global
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +58,10 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AF5E9C0A-C9A8-472E-930C-F9077FEB379D} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
+		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
+		{F9980628-8AD6-476C-82E0-7C36E9070F4A} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
+		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
+		{254DCE70-D7BE-4401-B2C2-1229FB661549} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00615881-92F6-41C6-8854-C81CE821EEAA}

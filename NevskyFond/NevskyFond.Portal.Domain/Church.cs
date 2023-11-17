@@ -1,14 +1,21 @@
-﻿using MediatR;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
+namespace NevskyFond.Portal.Domain
 {
-    public class AddChurchCommand : IRequest<AddChurchCommandResult>
+    /// <summary>
+    /// Религиозное учреждение
+    /// </summary>
+    public class Church
     {
+        /// <summary>
+        /// Идентификатор
+        /// </summary>
+        public int Id { get; set; }
+
         /// <summary>
         /// Название
         /// </summary>
@@ -18,5 +25,8 @@ namespace NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
         /// Дата создания
         /// </summary>
         public DateTime DateCreation { get; set; }
+
+        public int CityId { get; set; }
+        public City City { get; set; }
     }
 }

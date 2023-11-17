@@ -4,15 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
+namespace NevskyFond.Portal.Infrastructure.Consumers.Churches
 {
-    public class AddChurchResult
+    public class AddChurchConsumerRequest
     {
-        /// <summary>
-        /// ID религиозного учреждения
-        /// </summary>
-        public int Id { get; set; }
-
         /// <summary>
         /// Название
         /// </summary>

@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using NevskyFond.Portal.Api.Models.Requests.Churchs;
 
 namespace NevskyFond.Portal.Api.Controllers
 {
@@ -12,8 +13,11 @@ namespace NevskyFond.Portal.Api.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddChurch()
+        public async Task<IActionResult> AddChurch([FromBody] AddChurchRequest request)
         {
+
+
+
             return Ok(DateTime.Now);
         }
     }

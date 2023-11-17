@@ -1,11 +1,12 @@
-﻿using MediatR;
+﻿using MassTransit.Mediator;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewskyFond.Portal.Gateway.Infrastructure.Commands.Churchs.AddChurch
+namespace NevskyFond.Portal.Infrastructure.Commands.Churches
 {
     public class AddChurchCommand : IRequest<AddChurchCommandResult>
     {
