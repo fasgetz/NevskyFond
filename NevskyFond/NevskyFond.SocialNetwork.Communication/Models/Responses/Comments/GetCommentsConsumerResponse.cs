@@ -6,31 +6,31 @@ using System.Threading.Tasks;
 
 namespace NevskyFond.SocialNetwork.Communication.Models.Responses.Comments
 {
-    internal class GetCommentsConsumerResponse
+    public class GetCommentsConsumerResponse
     {
-        internal IEnumerable<CommentResponseDTO> Comments { get; set; }
+        public IEnumerable<CommentResponseDTO> Comments { get; set; }
     }
 
-    internal class CommentResponseDTO
+    public class CommentResponseDTO
     {
         /// <summary>
         /// Идентификатор
         /// </summary>
-        internal int Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
         /// Текст комментария
         /// </summary>
-        internal string Text { get; set; }
+        public string Text { get; set; }
 
         /// <summary>
         /// Дата создания
         /// </summary>
-        internal DateTime DateCreated { get; set; }
+        public DateTime DateCreated { get; set; }
 
         /// <summary>
         /// ID религиозного учреждения
         /// </summary>
-        internal int ChurchId { get; set; }
+        public int ChurchId { get; set; }
     }
 }

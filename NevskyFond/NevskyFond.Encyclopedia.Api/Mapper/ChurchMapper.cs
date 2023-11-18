@@ -3,6 +3,7 @@ using NevskyFond.Encyclopedia.Api.Models.Requests.Churchs;
 using NevskyFond.Encyclopedia.Api.Models.Responses.Churchs;
 using NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch;
 using NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById;
+using NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChurch;
 
 namespace NevskyFond.Encyclopedia.Api.Mapper
 {
@@ -12,10 +13,17 @@ namespace NevskyFond.Encyclopedia.Api.Mapper
         {
             CreateMap<AddChurchRequest, AddChurchCommand>();
 
-            CreateMap<GetChurchByIdRequest, GetChurchByIdQuery>();
+            CreateMap<GetChurchByIdRequest, GetChurchByIdHandlerQuery>();
 
             CreateMap<ChurchHandlerDTO, ChurchResponseDTO>();
             CreateMap<GetChurchByIdHandlerResult, GetChurchByIdResponse>();
+
+            CreateMap<GetExtendedChurchRequest, GetExtendedChurchHandlerQuery>();
+            CreateMap<GetExtendedChurchRequestCommentsFilter, GetExtendedChurchHandlerCommentsFilter>();
+
+            CreateMap<CommentResultHandlerDTO, CommentResponseDTO>();
+            CreateMap<GetExtendedChurchDTO, GetExtendedChurchResponseDTO>();
+            CreateMap<GetExtendedChurchHandlerResult, GetExtendedChurchResponse>();
         }
     }
 }

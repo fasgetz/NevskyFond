@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById
 {
-    public class GetChurchByIdHandler : IRequestHandler<GetChurchByIdQuery, GetChurchByIdHandlerResult>
+    public class GetChurchByIdHandler : IRequestHandler<GetChurchByIdHandlerQuery, GetChurchByIdHandlerResult>
     {
         private readonly IMapper _mapper;
         private readonly IChurchStore _churchStore;
@@ -23,7 +23,7 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById
             _churchStore = churchStore;
         }
 
-        public async Task<GetChurchByIdHandlerResult> Handle(GetChurchByIdQuery request, CancellationToken cancellationToken)
+        public async Task<GetChurchByIdHandlerResult> Handle(GetChurchByIdHandlerQuery request, CancellationToken cancellationToken)
         {
             var queryStore = _mapper.Map(request, new GetChurchByIdStoreQuery());
 

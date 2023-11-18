@@ -5,6 +5,7 @@ using NevskyFond.Encyclopedia.Api.Models.Requests.Churchs;
 using NevskyFond.Encyclopedia.Api.Models.Responses.Churchs;
 using NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch;
 using NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById;
+using NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChurch;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace NevskyFond.Encyclopedia.Api.Controllers
@@ -30,13 +31,39 @@ namespace NevskyFond.Encyclopedia.Api.Controllers
         [HttpGet("{Id}")]
         public async Task<ActionResult<GetChurchByIdResponse>> GetChurchById([FromQuery] GetChurchByIdRequest request)
         {
-            var query = _mapper.Map(request, new GetChurchByIdQuery());
+            var query = _mapper.Map(request, new GetChurchByIdHandlerQuery());
 
             var foundChurchResult = await _mediator.Send(query);
 
             var response = _mapper.Map(foundChurchResult, new GetChurchByIdResponse());
 
             return Ok(response);
+        }
+
+        /// <summary>
+        /// Получение расширенной информации о религиозном учреждении
+        /// </summary>
+        /// <returns>Возвращает расширенную информацию о религиозном учреждении</returns>
+        [HttpPost("Extended/{id}")]
+        public async Task<ActionResult<GetExtendedChurchResponse>> GetExtendedChurch([FromRoute] int id, [FromBody] GetExtendedChurchRequest request)
+        {
+            var query = _mapper.Map(request, new GetExtendedChurchHandlerQuery()
+            {
+                Id = id
+            });
+
+            var result = await _mediator.Send(query);
+
+            // TODO в будущем, когда будет MiddleWare, он будет автоматически сопоставлять
+            // кастомные ошибки и выдавать коды ответов
+            if (result == null)
+            {
+                return NoContent();
+            }
+
+            var response = _mapper.Map(result, new GetExtendedChurchResponse());
+
+            return response;
         }
 
         /// <summary>

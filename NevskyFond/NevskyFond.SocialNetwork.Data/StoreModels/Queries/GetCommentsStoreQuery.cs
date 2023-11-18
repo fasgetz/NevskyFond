@@ -11,6 +11,9 @@ namespace NevskyFond.SocialNetwork.Data.StoreModels.Queries
         /// <summary>
         /// ID религиозного учреждения
         /// </summary>
-        public long? ChurchId { get; set; }
+        public long ChurchId { get; set; }
+
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
     }
 }

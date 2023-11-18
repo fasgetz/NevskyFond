@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById
 {
-    public class GetChurchByIdQuery : IRequest<GetChurchByIdHandlerResult>
+    public class GetChurchByIdHandlerQuery : IRequest<GetChurchByIdHandlerResult>
     {
         public int Id { get; set; }
     }

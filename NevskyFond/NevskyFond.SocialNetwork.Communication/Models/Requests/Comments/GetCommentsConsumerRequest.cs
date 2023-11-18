@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace NevskyFond.SocialNetwork.Communication.Models.Requests.Comments
 {
-    internal class GetCommentsConsumerRequest
+    public class GetCommentsConsumerRequest
     {
         /// <summary>
         /// ID религиозного учреждения
         /// </summary>
-        public int? CharityId { get; set; }
+        public int ChurchId { get; set; }
+
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
     }
 }

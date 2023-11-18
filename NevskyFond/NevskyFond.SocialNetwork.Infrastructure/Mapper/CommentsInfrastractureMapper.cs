@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using NevskyFond.SocialNetwork.Communication.Models.Requests.Comments;
+using NevskyFond.SocialNetwork.Communication.Models.Responses.Comments;
 using NevskyFond.SocialNetwork.Data.StoreModels.Queries;
 using NevskyFond.SocialNetwork.Data.StoreModels.Results;
 using NevskyFond.SocialNetwork.Infrastructure.Queries.Comments.GetComments;
@@ -14,6 +16,10 @@ namespace NevskyFond.SocialNetwork.Infrastructure.Mapper
     {
         public CommentsInfrastractureMapper()
         {
+            CreateMap<CommentDTO, CommentResponseDTO>();
+            CreateMap<GetCommentsResult, GetCommentsConsumerResponse>();
+
+            CreateMap<GetCommentsConsumerRequest, GetCommentsQuery>();
             CreateMap<GetCommentsQuery, GetCommentsStoreQuery>();
             CreateMap<CommentStoreDTO, CommentDTO>();
         }

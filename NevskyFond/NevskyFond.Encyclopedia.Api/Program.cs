@@ -63,9 +63,6 @@ namespace NevskyFond.Encyclopedia.Api
 
             builder.Services.AddMassTransit(mt =>
             {
-                mt.AddDelayedMessageScheduler();
-                mt.SetKebabCaseEndpointNameFormatter();
-
                 mt.UsingRabbitMq((context, mq) =>
                 {
                     int port = rabbitMqOptions?.Port ?? 5672;
@@ -79,9 +76,9 @@ namespace NevskyFond.Encyclopedia.Api
                             h.Password(rabbitMqOptions?.Password);
                         });
 
-                    mq.UseDelayedMessageScheduler();
-                    mq.ConfigureEndpoints(context, new KebabCaseEndpointNameFormatter("dev", false));
-                    mq.UseMessageRetry(retry => { retry.Interval(3, TimeSpan.FromSeconds(5)); });
+
+                    mq.ConfigureEndpoints(context, KebabCaseEndpointNameFormatter.Instance);
+                    mq.UseTimeout(x => x.Timeout = TimeSpan.FromSeconds(5));
                 });
             });
 

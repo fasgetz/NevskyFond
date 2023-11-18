@@ -11,6 +11,9 @@ namespace NevskyFond.SocialNetwork.Communication.Models.Queries.Comments
         /// <summary>
         /// ID религиозного учреждения
         /// </summary>
-        public int? CharityId { get; set; }
+        public int ChurchId { get; set; }
+
+        public int PageNumber { get; set; }
+        public int PageSize { get; set; }
     }
 }

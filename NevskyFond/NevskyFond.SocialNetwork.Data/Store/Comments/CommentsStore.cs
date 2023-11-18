@@ -31,12 +31,11 @@ namespace NevskyFond.SocialNetwork.Data.Store.Comments
         {
             var queryComments = _dbContext.Comments.AsQueryable();
 
-            if (query.ChurchId != null)
-            {
-                queryComments = queryComments.Where(e => e.ChurchId == query.ChurchId);
-            }
-
-            queryComments = queryComments.OrderByDescending(e => e.Id);
+            queryComments = queryComments
+                .Where(e => e.ChurchId == query.ChurchId)
+                .OrderByDescending(e => e.Id)
+                .Skip((query.PageNumber - 1) * query.PageSize)
+                .Take(query.PageSize);
 
             var comments = await queryComments
                 .Select(e => _mapper.Map(e, new CommentStoreDTO()))

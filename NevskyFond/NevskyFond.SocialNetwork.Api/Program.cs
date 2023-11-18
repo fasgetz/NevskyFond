@@ -8,6 +8,7 @@ using NevskyFond.SocialNetwork.Communication.Extensions;
 using NevskyFond.SocialNetwork.Data;
 using NevskyFond.SocialNetwork.Data.Mapper;
 using NevskyFond.SocialNetwork.Data.Store.Comments;
+using NevskyFond.SocialNetwork.Infrastructure.Consumers.Comments;
 using NevskyFond.SocialNetwork.Infrastructure.Mapper;
 using NevskyFond.SocialNetwork.Infrastructure.Queries.Comments.GetComments;
 using Swashbuckle.AspNetCore.Filters;
@@ -56,16 +57,13 @@ namespace NevskyFond.SocialNetwork.Api
 
             builder.Services.AddMassTransit(mt =>
             {
-                //mt.AddConsumers(typeof(AddChurchConsumer).Assembly);
-                //mt.AddConsumer<AddChurchConsumer>();
+                mt.AddConsumers(typeof(GetCommentsConsumer).Assembly);
 
-                mt.SetKebabCaseEndpointNameFormatter();
-
-                mt.UsingRabbitMq((ctx, cfg) =>
+                mt.UsingRabbitMq((context, mq) =>
                 {
                     int port = rabbitMqOptions?.Port ?? 5672;
 
-                    cfg.Host(rabbitMqOptions?.Host,
+                    mq.Host(rabbitMqOptions?.Host,
                         (ushort)port,
                         "/",
                         h =>
@@ -74,14 +72,10 @@ namespace NevskyFond.SocialNetwork.Api
                             h.Password(rabbitMqOptions?.Password);
                         });
 
-                    cfg.UseDelayedMessageScheduler();
-                    cfg.ServiceInstance(instance =>
-                    {
-                        instance.ConfigureJobServiceEndpoints();
-                        instance.ConfigureEndpoints(ctx, new KebabCaseEndpointNameFormatter("dev", false));
-                    });
-                });
 
+                    mq.ConfigureEndpoints(context, KebabCaseEndpointNameFormatter.Instance);
+                    mq.UseTimeout(x => x.Timeout = TimeSpan.FromSeconds(5));
+                });
             });
 
             #endregion
