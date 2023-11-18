@@ -30,6 +30,15 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChur
             _socialNetworkClient = socialNetworkClient;
         }
 
+        private async Task<IEnumerable<CommentResultHandlerDTO>> GetCommentsAsync(GetExtendedChurchHandlerQuery request)
+        {
+            var getCommentsQuery = _mapper.Map<GetExtendedChurchHandlerQuery, GetCommentsQuery>(request);
+
+            var commentsResult = await _socialNetworkClient.Comments.GetCommentsAsync(getCommentsQuery);
+
+            return commentsResult.Comments.Select(e => _mapper.Map(e, new CommentResultHandlerDTO()));
+        }
+
         public async Task<GetExtendedChurchHandlerResult> Handle(GetExtendedChurchHandlerQuery request, CancellationToken cancellationToken)
         {
             var queryStore = _mapper.Map(request, new GetChurchByIdStoreQuery());
@@ -48,11 +57,7 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChur
             // Получение комментариев религиозного учреждения
             if (request.CommentsFilter != null)
             {
-                var getCommentsQuery = _mapper.Map(request, new GetCommentsQuery());
-
-                var commentsResult = await _socialNetworkClient.Comments.GetCommentsAsync(getCommentsQuery);
-
-                var comments = commentsResult.Comments.Select(e => _mapper.Map(e, new CommentResultHandlerDTO()));
+                var comments = await GetCommentsAsync(request);
 
                 result.Comments = comments;
             }
