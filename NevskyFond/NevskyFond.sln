@@ -3,23 +3,41 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Portal.Api", "NevskyFond.Portal.Api\NevskyFond.Portal.Api.csproj", "{AF5E9C0A-C9A8-472E-930C-F9077FEB379D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encyclopedia", "Encyclopedia", "{39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Portal", "Portal", "{929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Encyclopedia.Api", "NevskyFond.Encyclopedia.Api\NevskyFond.Encyclopedia.Api.csproj", "{9F71F010-0DEF-41EF-8631-F878D260D8F9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Encyclopedia.Infrastructure", "NevskyFond.Encyclopedia.Infrastructure\NevskyFond.Encyclopedia.Infrastructure.csproj", "{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Portal.Gateway.Api", "NevskyFond.Portal.Gateway.Api\NevskyFond.Portal.Gateway.Api.csproj", "{9F71F010-0DEF-41EF-8631-F878D260D8F9}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{57C34B7D-EA20-4D34-A881-21523E141A23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Gateway.Infrastructure", "NevskyFond.Portal.Gateway.Infrastructure\NevskyFond.Portal.Gateway.Infrastructure.csproj", "{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Encyclopedia.Communication.Contracts", "NevskyFond.Encyclopedia.Communication.Contracts\NevskyFond.Encyclopedia.Communication.Contracts.csproj", "{19CFAE25-F777-4AA6-8A3D-6DF1E7261E03}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Infrastructure", "NevskyFond.Portal.Infrastructure\NevskyFond.Portal.Infrastructure.csproj", "{F9980628-8AD6-476C-82E0-7C36E9070F4A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SocialNetwork", "SocialNetwork", "{90200BEA-4B29-495F-BD5D-4D7DC264246D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Data", "NevskyFond.Portal.Data\NevskyFond.Portal.Data.csproj", "{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.SocialNetwork.Infrastructure", "NevskyFond.SocialNetwork.Infrastructure\NevskyFond.SocialNetwork.Infrastructure.csproj", "{450A77FB-C46D-4E12-A1EC-B19A5260597B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Portal.Domain", "NevskyFond.Portal.Domain\NevskyFond.Portal.Domain.csproj", "{254DCE70-D7BE-4401-B2C2-1229FB661549}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.SocialNetwork.Api", "NevskyFond.SocialNetwork.Api\NevskyFond.SocialNetwork.Api.csproj", "{3CE71451-484C-4A48-8EB4-DA57DFFD8D02}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{C639FE22-0D27-488D-AAB8-625E9434F876}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Encyclopedia.Communication", "NevskyFond.Encyclopedia.Communication\NevskyFond.Encyclopedia.Communication.csproj", "{DF144D56-979A-44E2-B0B9-7D450356C7E3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Communication", "Communication", "{7A10484C-738C-46C1-B365-41DB250337A8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encyclopedia", "Encyclopedia", "{9F702347-CDC2-462C-A6AE-DD8314655028}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SocialNetwork", "SocialNetwork", "{7B3F80E8-5846-4C80-8572-7255C36BC00B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.SocialNetwork.Data", "NevskyFond.SocialNetwork.Data\NevskyFond.SocialNetwork.Data.csproj", "{4EE7B253-67F0-4B9B-ACED-FEE2AC733E58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.SocialNetwork.Domain", "NevskyFond.SocialNetwork.Domain\NevskyFond.SocialNetwork.Domain.csproj", "{8313F810-5458-45B7-94B9-2ED5D30D1BF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Core", "NevskyFond.Core\NevskyFond.Core.csproj", "{BECFD08F-BADC-4C94-BAA1-5162AE386355}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{0ED7D818-3D62-453D-A651-674C46CD0779}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Encyclopedia.Data", "NevskyFond.Encyclopedia.Data\NevskyFond.Encyclopedia.Data.csproj", "{2E80DDC6-814F-4092-8459-1859E8CE0024}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Encyclopedia.Domain", "NevskyFond.Encyclopedia.Domain\NevskyFond.Encyclopedia.Domain.csproj", "{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,10 +45,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF5E9C0A-C9A8-472E-930C-F9077FEB379D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF5E9C0A-C9A8-472E-930C-F9077FEB379D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF5E9C0A-C9A8-472E-930C-F9077FEB379D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF5E9C0A-C9A8-472E-930C-F9077FEB379D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -39,29 +53,62 @@ Global
 		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F9980628-8AD6-476C-82E0-7C36E9070F4A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{254DCE70-D7BE-4401-B2C2-1229FB661549}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19CFAE25-F777-4AA6-8A3D-6DF1E7261E03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19CFAE25-F777-4AA6-8A3D-6DF1E7261E03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19CFAE25-F777-4AA6-8A3D-6DF1E7261E03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19CFAE25-F777-4AA6-8A3D-6DF1E7261E03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{450A77FB-C46D-4E12-A1EC-B19A5260597B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{450A77FB-C46D-4E12-A1EC-B19A5260597B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{450A77FB-C46D-4E12-A1EC-B19A5260597B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{450A77FB-C46D-4E12-A1EC-B19A5260597B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CE71451-484C-4A48-8EB4-DA57DFFD8D02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CE71451-484C-4A48-8EB4-DA57DFFD8D02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CE71451-484C-4A48-8EB4-DA57DFFD8D02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CE71451-484C-4A48-8EB4-DA57DFFD8D02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF144D56-979A-44E2-B0B9-7D450356C7E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF144D56-979A-44E2-B0B9-7D450356C7E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF144D56-979A-44E2-B0B9-7D450356C7E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF144D56-979A-44E2-B0B9-7D450356C7E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EE7B253-67F0-4B9B-ACED-FEE2AC733E58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EE7B253-67F0-4B9B-ACED-FEE2AC733E58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EE7B253-67F0-4B9B-ACED-FEE2AC733E58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EE7B253-67F0-4B9B-ACED-FEE2AC733E58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8313F810-5458-45B7-94B9-2ED5D30D1BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8313F810-5458-45B7-94B9-2ED5D30D1BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8313F810-5458-45B7-94B9-2ED5D30D1BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8313F810-5458-45B7-94B9-2ED5D30D1BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BECFD08F-BADC-4C94-BAA1-5162AE386355}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BECFD08F-BADC-4C94-BAA1-5162AE386355}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BECFD08F-BADC-4C94-BAA1-5162AE386355}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BECFD08F-BADC-4C94-BAA1-5162AE386355}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E80DDC6-814F-4092-8459-1859E8CE0024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E80DDC6-814F-4092-8459-1859E8CE0024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E80DDC6-814F-4092-8459-1859E8CE0024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E80DDC6-814F-4092-8459-1859E8CE0024}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{AF5E9C0A-C9A8-472E-930C-F9077FEB379D} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
+		{39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64} = {57C34B7D-EA20-4D34-A881-21523E141A23}
 		{9F71F010-0DEF-41EF-8631-F878D260D8F9} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
 		{DE370DE8-6CD9-4DB7-851F-31AC5DC32695} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
-		{F9980628-8AD6-476C-82E0-7C36E9070F4A} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
-		{3508124B-8AFC-4DB1-AACF-EE71D1A8939C} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
-		{254DCE70-D7BE-4401-B2C2-1229FB661549} = {929FA46F-2ACA-4B53-95E7-CFBEA6441D6C}
+		{19CFAE25-F777-4AA6-8A3D-6DF1E7261E03} = {9F702347-CDC2-462C-A6AE-DD8314655028}
+		{90200BEA-4B29-495F-BD5D-4D7DC264246D} = {57C34B7D-EA20-4D34-A881-21523E141A23}
+		{450A77FB-C46D-4E12-A1EC-B19A5260597B} = {90200BEA-4B29-495F-BD5D-4D7DC264246D}
+		{3CE71451-484C-4A48-8EB4-DA57DFFD8D02} = {90200BEA-4B29-495F-BD5D-4D7DC264246D}
+		{DF144D56-979A-44E2-B0B9-7D450356C7E3} = {9F702347-CDC2-462C-A6AE-DD8314655028}
+		{9F702347-CDC2-462C-A6AE-DD8314655028} = {7A10484C-738C-46C1-B365-41DB250337A8}
+		{7B3F80E8-5846-4C80-8572-7255C36BC00B} = {7A10484C-738C-46C1-B365-41DB250337A8}
+		{4EE7B253-67F0-4B9B-ACED-FEE2AC733E58} = {90200BEA-4B29-495F-BD5D-4D7DC264246D}
+		{8313F810-5458-45B7-94B9-2ED5D30D1BF5} = {90200BEA-4B29-495F-BD5D-4D7DC264246D}
+		{BECFD08F-BADC-4C94-BAA1-5162AE386355} = {0ED7D818-3D62-453D-A651-674C46CD0779}
+		{2E80DDC6-814F-4092-8459-1859E8CE0024} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
+		{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00615881-92F6-41C6-8854-C81CE821EEAA}

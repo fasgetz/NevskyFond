@@ -43,6 +43,44 @@ namespace NevskyFond.SocialNetwork.Api
 
             builder.Services.AddScoped<ICommentsStore, CommentsStore>();
 
+            //#region MassTransit
+
+            //var rabbitMqOptions = builder.Configuration
+            //    .GetSection(nameof(RabbitMqOptions))
+            //    .Get<RabbitMqOptions?>();
+
+            //builder.Services.AddMassTransit(mt =>
+            //{
+            //    mt.AddConsumers(typeof(AddChurchConsumer).Assembly);
+            //    mt.AddConsumer<AddChurchConsumer>();
+
+            //    mt.SetKebabCaseEndpointNameFormatter();
+
+            //    mt.UsingRabbitMq((ctx, cfg) =>
+            //    {
+            //        int port = rabbitMqOptions?.Port ?? 5672;
+
+            //        cfg.Host(rabbitMqOptions?.Host,
+            //            (ushort)port,
+            //            "/",
+            //            h =>
+            //            {
+            //                h.Username(rabbitMqOptions?.Username);
+            //                h.Password(rabbitMqOptions?.Password);
+            //            });
+
+            //        cfg.UseDelayedMessageScheduler();
+            //        cfg.ServiceInstance(instance =>
+            //        {
+            //            instance.ConfigureJobServiceEndpoints();
+            //            instance.ConfigureEndpoints(ctx, new KebabCaseEndpointNameFormatter("dev", false));
+            //        });
+            //    });
+
+            //});
+
+            //#endregion
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
