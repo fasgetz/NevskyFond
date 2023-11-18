@@ -27,7 +27,7 @@ namespace NevskyFond.Encyclopedia.Data.Seeders
                     new Church() { CityId = 1, Name = "Храм Покрова Пресвятой Богородицы", DateCreation = DateTime.Now }
                 };
 
-                _context.churches.AddRange(churches);
+                _context.Churchs.AddRange(churches);
                 _context.SaveChanges();
             }
         }

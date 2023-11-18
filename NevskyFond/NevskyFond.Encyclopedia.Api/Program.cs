@@ -15,6 +15,7 @@ using NevskyFond.Encyclopedia.Data.Store.Church;
 using NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch;
 using NevskyFond.SocialNetwork.Communication.Extensions;
 using RabbitMQ.Client;
+using Serilog;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 using ChurchInfrastructureMapper = NevskyFond.Encyclopedia.Infrastructure.Mapper.ChurchMapper;
@@ -26,6 +27,8 @@ namespace NevskyFond.Encyclopedia.Api
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
+
+            builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
 
             // Add services to the container.
             builder.Services.AddDbContext<EncyclopediaContext>(options =>
@@ -90,6 +93,8 @@ namespace NevskyFond.Encyclopedia.Api
             builder.Services.AddScoped<IChurchStore, ChurchStore>();
 
             var app = builder.Build();
+
+            app.UseSerilogRequestLogging();
 
             using var scope = app.Services.CreateScope();
             var dbContext = scope.ServiceProvider.GetRequiredService<EncyclopediaContext>();

@@ -1,4 +1,5 @@
-﻿using NevskyFond.Encyclopedia.Data.Seeders;
+﻿using Microsoft.EntityFrameworkCore;
+using NevskyFond.Encyclopedia.Data.Seeders;
 using System;
 using System.Collections.Generic;
 using System.Linq;

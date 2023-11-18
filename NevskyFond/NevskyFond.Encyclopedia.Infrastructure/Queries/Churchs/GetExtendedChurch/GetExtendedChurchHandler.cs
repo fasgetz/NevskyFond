@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MassTransit;
 using MediatR;
+using Microsoft.Extensions.Logging;
 using NevskyFond.Encyclopedia.Data.Store.Church;
 using NevskyFond.Encyclopedia.Data.StoreModels.Church.Queries;
 using NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById;
@@ -21,13 +22,15 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChur
         private readonly IMapper _mapper;
         private readonly IChurchStore _churchStore;
         private readonly ISocialNetworkClient _socialNetworkClient;
-        private readonly IRequestClient<GetCommentsConsumerRequest> _getCommentsClient;
+        private readonly ILogger<GetExtendedChurchHandler> _logger;
 
-        public GetExtendedChurchHandler(IMapper mapper, IChurchStore churchStore, ISocialNetworkClient socialNetworkClient)
+        public GetExtendedChurchHandler(IMapper mapper, IChurchStore churchStore, ISocialNetworkClient socialNetworkClient,
+            ILogger<GetExtendedChurchHandler> logger)
         {
             _mapper = mapper;
             _churchStore = churchStore;
             _socialNetworkClient = socialNetworkClient;
+            _logger = logger;
         }
 
         private async Task<IEnumerable<CommentResultHandlerDTO>> GetCommentsAsync(GetExtendedChurchHandlerQuery request)
@@ -48,6 +51,8 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChur
             if (foundChurchResult.Church == null)
             {
                 // TODO вернуть кастомную ошибку, что не найдено религиозное учреждение
+
+                _logger.LogInformation("Не найдено религиозное учреждение по ID {0}", request.Id);
 
                 return null;
             }
