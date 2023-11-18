@@ -1,4 +1,4 @@
-
+﻿
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -6,13 +6,16 @@ using NevskyFond.SocialNetwork.Api.Mapper;
 using NevskyFond.SocialNetwork.Api.Models.Settings;
 using NevskyFond.SocialNetwork.Communication.Extensions;
 using NevskyFond.SocialNetwork.Data;
+using NevskyFond.SocialNetwork.Data.Extensions;
 using NevskyFond.SocialNetwork.Data.Mapper;
+using NevskyFond.SocialNetwork.Data.Seeders;
 using NevskyFond.SocialNetwork.Data.Store.Comments;
 using NevskyFond.SocialNetwork.Infrastructure.Consumers.Comments;
 using NevskyFond.SocialNetwork.Infrastructure.Mapper;
 using NevskyFond.SocialNetwork.Infrastructure.Queries.Comments.GetComments;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
+using System.Xml.Serialization;
 
 namespace NevskyFond.SocialNetwork.Api
 {
@@ -81,6 +84,11 @@ namespace NevskyFond.SocialNetwork.Api
             #endregion
 
             var app = builder.Build();
+
+            using var scope = app.Services.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<SocialNetworkContext>();
+
+            DatabaseExtensions.MigrateAndSeed(dbContext);
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
