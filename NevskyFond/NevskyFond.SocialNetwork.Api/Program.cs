@@ -1,7 +1,10 @@
 
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using NevskyFond.SocialNetwork.Api.Mapper;
+using NevskyFond.SocialNetwork.Api.Models.Settings;
+using NevskyFond.SocialNetwork.Communication.Extensions;
 using NevskyFond.SocialNetwork.Data;
 using NevskyFond.SocialNetwork.Data.Mapper;
 using NevskyFond.SocialNetwork.Data.Store.Comments;
@@ -43,43 +46,45 @@ namespace NevskyFond.SocialNetwork.Api
 
             builder.Services.AddScoped<ICommentsStore, CommentsStore>();
 
-            //#region MassTransit
+            SocialNetworkCommunicationExtensions.AddSocialNetworkCommunication(builder.Services);
 
-            //var rabbitMqOptions = builder.Configuration
-            //    .GetSection(nameof(RabbitMqOptions))
-            //    .Get<RabbitMqOptions?>();
+            #region MassTransit
 
-            //builder.Services.AddMassTransit(mt =>
-            //{
-            //    mt.AddConsumers(typeof(AddChurchConsumer).Assembly);
-            //    mt.AddConsumer<AddChurchConsumer>();
+            var rabbitMqOptions = builder.Configuration
+                .GetSection(nameof(RabbitMqOptions))
+                .Get<RabbitMqOptions?>();
 
-            //    mt.SetKebabCaseEndpointNameFormatter();
+            builder.Services.AddMassTransit(mt =>
+            {
+                //mt.AddConsumers(typeof(AddChurchConsumer).Assembly);
+                //mt.AddConsumer<AddChurchConsumer>();
 
-            //    mt.UsingRabbitMq((ctx, cfg) =>
-            //    {
-            //        int port = rabbitMqOptions?.Port ?? 5672;
+                mt.SetKebabCaseEndpointNameFormatter();
 
-            //        cfg.Host(rabbitMqOptions?.Host,
-            //            (ushort)port,
-            //            "/",
-            //            h =>
-            //            {
-            //                h.Username(rabbitMqOptions?.Username);
-            //                h.Password(rabbitMqOptions?.Password);
-            //            });
+                mt.UsingRabbitMq((ctx, cfg) =>
+                {
+                    int port = rabbitMqOptions?.Port ?? 5672;
 
-            //        cfg.UseDelayedMessageScheduler();
-            //        cfg.ServiceInstance(instance =>
-            //        {
-            //            instance.ConfigureJobServiceEndpoints();
-            //            instance.ConfigureEndpoints(ctx, new KebabCaseEndpointNameFormatter("dev", false));
-            //        });
-            //    });
+                    cfg.Host(rabbitMqOptions?.Host,
+                        (ushort)port,
+                        "/",
+                        h =>
+                        {
+                            h.Username(rabbitMqOptions?.Username);
+                            h.Password(rabbitMqOptions?.Password);
+                        });
 
-            //});
+                    cfg.UseDelayedMessageScheduler();
+                    cfg.ServiceInstance(instance =>
+                    {
+                        instance.ConfigureJobServiceEndpoints();
+                        instance.ConfigureEndpoints(ctx, new KebabCaseEndpointNameFormatter("dev", false));
+                    });
+                });
 
-            //#endregion
+            });
+
+            #endregion
 
             var app = builder.Build();
 

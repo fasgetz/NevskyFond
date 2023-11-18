@@ -13,6 +13,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\NevskyFond.SocialNetwork.Communication\NevskyFond.SocialNetwork.Communication.csproj" />
 		<ProjectReference Include="..\NevskyFond.SocialNetwork.Data\NevskyFond.SocialNetwork.Data.csproj" />
 	</ItemGroup>
 

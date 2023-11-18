@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NevskyFond.SocialNetwork.Api.Models.Requests;
 using NevskyFond.SocialNetwork.Api.Models.Responses;
+using NevskyFond.SocialNetwork.Communication.Client;
 using NevskyFond.SocialNetwork.Data.Store.Comments;
 using NevskyFond.SocialNetwork.Infrastructure.Queries.Comments.GetComments;
 
@@ -14,12 +15,27 @@ namespace NevskyFond.SocialNetwork.Api.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private readonly ISocialNetworkClient socialNetworkClient;
         private readonly ICommentsStore commentsStore;
 
-        public CommentsController(IMediator mediator, IMapper mapper)
+        public CommentsController(IMediator mediator, IMapper mapper, ISocialNetworkClient socialNetworkClient)
         {
             _mediator = mediator;
             _mapper = mapper;
+            this.socialNetworkClient = socialNetworkClient;
+        }
+
+
+        [HttpGet("Test")]
+        public async Task<IActionResult> Test()
+        {
+            var data = await socialNetworkClient.Comments
+                .GetCommentsAsync(new Communication.Models.Queries.Comments.GetCommentsQuery()
+                {
+                    CharityId = 1
+                });
+
+            return Ok();
         }
 
         /// <summary>

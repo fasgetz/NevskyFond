@@ -2,7 +2,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using NevskyFond.Encyclopedia.Api.Models.Requests.Churchs;
+using NevskyFond.Encyclopedia.Api.Models.Responses.Churchs;
 using NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch;
+using NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetChurchById;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace NevskyFond.Encyclopedia.Api.Controllers
 {
@@ -17,6 +20,23 @@ namespace NevskyFond.Encyclopedia.Api.Controllers
         {
             _mapper = mapper;
             _mediator = mediator;
+        }
+
+        /// <summary>
+        /// Получение религиозного учреждения
+        /// </summary>
+        /// <param name="request"></param>
+        /// <returns></returns>
+        [HttpGet("{Id}")]
+        public async Task<ActionResult<GetChurchByIdResponse>> GetChurchById([FromQuery] GetChurchByIdRequest request)
+        {
+            var query = _mapper.Map(request, new GetChurchByIdQuery());
+
+            var foundChurchResult = await _mediator.Send(query);
+
+            var response = _mapper.Map(foundChurchResult, new GetChurchByIdResponse());
+
+            return Ok(response);
         }
 
         /// <summary>

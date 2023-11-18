@@ -7,11 +7,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using NevskyFond.Encyclopedia.Api.Mapper;
 using NevskyFond.Encyclopedia.Api.Models.RequestValidations.Churchs;
-using NevskyFond.Encyclopedia.Api.Models.Settings;
-using NevskyFond.Encyclopedia.Communication.Mapper;
-using NevskyFond.Encyclopedia.Communication.Services.Churchs;
+using NevskyFond.Encyclopedia.Api.Settings;
 using NevskyFond.Encyclopedia.Data;
+using NevskyFond.Encyclopedia.Data.Mapper;
+using NevskyFond.Encyclopedia.Data.Store.Church;
 using NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch;
+using NevskyFond.SocialNetwork.Communication.Extensions;
 using RabbitMQ.Client;
 using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
@@ -42,7 +43,7 @@ namespace NevskyFond.Encyclopedia.Api
                     options.RegisterValidatorsFromAssembly(Assembly.GetExecutingAssembly());
                 });
 
-            builder.Services.AddAutoMapper(typeof(ChurchMapper), typeof(ChurchInfrastructureMapper), typeof(ChurchComminicationMapper));
+            builder.Services.AddAutoMapper(typeof(ChurchMapper), typeof(ChurchInfrastructureMapper), typeof(ChurchStoreMapper));
 
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(AddChurchCommand).Assembly));
 
@@ -50,7 +51,7 @@ namespace NevskyFond.Encyclopedia.Api
             builder.Services.AddSwaggerExamplesFromAssemblies(Assembly.GetEntryAssembly());
             builder.Services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "PortalChurchsAPI", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "EncyclopediaAPI", Version = "v1" });
                 c.ExampleFilters();
             });
 
@@ -86,7 +87,9 @@ namespace NevskyFond.Encyclopedia.Api
 
             #endregion
 
-            builder.Services.AddScoped<IChurchService, ChurchService>();
+            SocialNetworkCommunicationExtensions.AddSocialNetworkCommunication(builder.Services);
+
+            builder.Services.AddScoped<IChurchStore, ChurchStore>();
 
             var app = builder.Build();
 

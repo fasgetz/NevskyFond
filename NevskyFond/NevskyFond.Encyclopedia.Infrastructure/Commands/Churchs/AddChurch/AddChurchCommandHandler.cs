@@ -1,30 +1,34 @@
 ﻿using AutoMapper;
 using MediatR;
-using NevskyFond.Encyclopedia.Communication.Models.Commands;
-using NevskyFond.Encyclopedia.Communication.Services.Churchs;
 
 namespace NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch
 {
     public class AddChurchCommandHandler : IRequestHandler<AddChurchCommand, AddChurchCommandResult>
     {
         private readonly IMapper _mapper;
-        private readonly IChurchService _churchService;
 
-        public AddChurchCommandHandler(IMapper mapper, IChurchService churchService)
+        public Task<AddChurchCommandResult> Handle(AddChurchCommand request, CancellationToken cancellationToken)
         {
-            _mapper = mapper;
-            _churchService = churchService;
+            throw new NotImplementedException();
         }
 
-        public async Task<AddChurchCommandResult> Handle(AddChurchCommand request, CancellationToken cancellationToken)
-        {
-            var serviceCommand = _mapper.Map(request, new AddChurchInterserviceCommand());
+        //private readonly IChurchService _churchService;
 
-            var addedChurch = await _churchService.AddChurchAsync(serviceCommand);
+        //public AddChurchCommandHandler(IMapper mapper, IChurchService churchService)
+        //{
+        //    _mapper = mapper;
+        //    _churchService = churchService;
+        //}
 
-            var result = _mapper.Map(addedChurch, new AddChurchCommandResult());
+        //public async Task<AddChurchCommandResult> Handle(AddChurchCommand request, CancellationToken cancellationToken)
+        //{
+        //    var serviceCommand = _mapper.Map(request, new AddChurchInterserviceCommand());
 
-            return result;
-        }
+        //    var addedChurch = await _churchService.AddChurchAsync(serviceCommand);
+
+        //    var result = _mapper.Map(addedChurch, new AddChurchCommandResult());
+
+        //    return result;
+        //}
     }
 }
