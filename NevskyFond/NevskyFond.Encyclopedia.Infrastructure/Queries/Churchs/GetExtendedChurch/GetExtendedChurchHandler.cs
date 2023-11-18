@@ -64,6 +64,8 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChur
             {
                 var comments = await GetCommentsAsync(request);
 
+                _logger.LogInformation("По религиозному учреждению по ID {0} получено {1} комментариев", request.Id, comments.Count());
+
                 result.Comments = comments;
             }
 
