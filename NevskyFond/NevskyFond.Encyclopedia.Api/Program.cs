@@ -9,6 +9,7 @@ using NevskyFond.Encyclopedia.Api.Mapper;
 using NevskyFond.Encyclopedia.Api.Models.RequestValidations.Churchs;
 using NevskyFond.Encyclopedia.Api.Settings;
 using NevskyFond.Encyclopedia.Data;
+using NevskyFond.Encyclopedia.Data.Extensions;
 using NevskyFond.Encyclopedia.Data.Mapper;
 using NevskyFond.Encyclopedia.Data.Store.Church;
 using NevskyFond.Encyclopedia.Infrastructure.Commands.Encyclopedia.AddChurch;
@@ -89,6 +90,11 @@ namespace NevskyFond.Encyclopedia.Api
             builder.Services.AddScoped<IChurchStore, ChurchStore>();
 
             var app = builder.Build();
+
+            using var scope = app.Services.CreateScope();
+            var dbContext = scope.ServiceProvider.GetRequiredService<EncyclopediaContext>();
+
+            DatabaseExtensions.MigrateAndSeed(dbContext);
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
