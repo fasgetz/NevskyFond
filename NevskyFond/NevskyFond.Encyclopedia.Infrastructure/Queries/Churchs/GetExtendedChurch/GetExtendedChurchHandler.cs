@@ -39,7 +39,9 @@ namespace NevskyFond.Encyclopedia.Infrastructure.Queries.Churchs.GetExtendedChur
 
             var commentsResult = await _socialNetworkClient.Comments.GetCommentsAsync(getCommentsQuery);
 
-            return commentsResult.Comments.Select(e => _mapper.Map(e, new CommentResultHandlerDTO()));
+            var comments = _mapper.Map<IEnumerable<CommentResultHandlerDTO>>(commentsResult.Comments);
+
+            return comments;
         }
 
         public async Task<GetExtendedChurchHandlerResult> Handle(GetExtendedChurchHandlerQuery request, CancellationToken cancellationToken)

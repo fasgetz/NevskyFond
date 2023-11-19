@@ -29,6 +29,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.Encyclopedia.Dom
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NevskyFond.SocialNetwork.Communication", "NevskyFond.SocialNetwork.Communication\NevskyFond.SocialNetwork.Communication.csproj", "{61C41B6D-850E-4861-85A7-5D5F43EE2EA8}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{4CA06C5D-921A-42A7-AC0F-15C3FD1B958E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Encyclopedia", "Encyclopedia", "{72797B30-D54B-4DDD-8018-74E32B991830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NevskyFond.Encyclopedia.Infrastructure.Tests", "NevskyFond.Encyclopedia.Infrastructure.Tests\NevskyFond.Encyclopedia.Infrastructure.Tests.csproj", "{C87E9841-3204-4323-B05A-54D522E2C356}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +77,10 @@ Global
 		{61C41B6D-850E-4861-85A7-5D5F43EE2EA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{61C41B6D-850E-4861-85A7-5D5F43EE2EA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{61C41B6D-850E-4861-85A7-5D5F43EE2EA8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C87E9841-3204-4323-B05A-54D522E2C356}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C87E9841-3204-4323-B05A-54D522E2C356}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C87E9841-3204-4323-B05A-54D522E2C356}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C87E9841-3204-4323-B05A-54D522E2C356}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -87,6 +97,8 @@ Global
 		{2E80DDC6-814F-4092-8459-1859E8CE0024} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
 		{D3B179BA-0CC2-46AE-AF25-9B1D4A1AF05D} = {39D4C89E-D9EF-4631-AF7F-ED3A35BA6E64}
 		{61C41B6D-850E-4861-85A7-5D5F43EE2EA8} = {7A10484C-738C-46C1-B365-41DB250337A8}
+		{72797B30-D54B-4DDD-8018-74E32B991830} = {4CA06C5D-921A-42A7-AC0F-15C3FD1B958E}
+		{C87E9841-3204-4323-B05A-54D522E2C356} = {72797B30-D54B-4DDD-8018-74E32B991830}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {00615881-92F6-41C6-8854-C81CE821EEAA}
