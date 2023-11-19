@@ -25,14 +25,8 @@ namespace NevskyFond.SocialNetwork.Api
 
             builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
 
-            // Add services to the container.
             builder.Services.AddDbContext<SocialNetworkContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(SocialNetworkContext)), e =>
-                {
-
-                });
-            });
+                options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(SocialNetworkContext))));
 
             builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(GetCommentsQuery).Assembly));
 

@@ -21,7 +21,7 @@ namespace NevskyFond.SocialNetwork.Data.Configurations
                 .IsRequired();
 
             builder.HasIndex(e => e.ChurchId)
-                .IsClustered(false);
+                .IsUnique(false);
         }
     }
 }

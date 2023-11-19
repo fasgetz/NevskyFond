@@ -30,14 +30,8 @@ namespace NevskyFond.Encyclopedia.Api
 
             builder.Host.UseSerilog((context, configuration) => configuration.ReadFrom.Configuration(context.Configuration));
 
-            // Add services to the container.
             builder.Services.AddDbContext<EncyclopediaContext>(options =>
-            {
-                options.UseSqlServer(builder.Configuration.GetConnectionString(nameof(EncyclopediaContext)), e =>
-                {
-
-                });
-            });
+                options.UseNpgsql(builder.Configuration.GetConnectionString(nameof(EncyclopediaContext))));
 
             builder.Services.AddControllers()
                 .AddFluentValidation(options =>

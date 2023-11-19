@@ -22,13 +22,13 @@ namespace NevskyFond.SocialNetwork.Data.Seeders
             {
                 var churches = new List<Comment>
                 {
-                    new Comment() { ChurchId = 1, Text = "Комментарий средний", DateCreated = DateTime.Now },
-                    new Comment() { ChurchId = 1, Text = "Комментарий хороший", DateCreated = DateTime.Now },
-                    new Comment() { ChurchId = 1, Text = "Комментарий очень хороший", DateCreated = DateTime.Now },
-                    new Comment() { ChurchId = 2, Text = "Комментарий плохой", DateCreated = DateTime.Now },
-                    new Comment() { ChurchId = 2, Text = "Комментарий средний", DateCreated = DateTime.Now },
-                    new Comment() { ChurchId = 2, Text = "Комментарий хороший", DateCreated = DateTime.Now },
-                    new Comment() { ChurchId = 2, Text = "Комментарий очень хороший", DateCreated = DateTime.Now },
+                    new Comment() { ChurchId = 1, Text = "Комментарий средний", DateCreated = DateTime.UtcNow },
+                    new Comment() { ChurchId = 1, Text = "Комментарий хороший", DateCreated = DateTime.UtcNow },
+                    new Comment() { ChurchId = 1, Text = "Комментарий очень хороший", DateCreated = DateTime.UtcNow },
+                    new Comment() { ChurchId = 2, Text = "Комментарий плохой", DateCreated = DateTime.UtcNow },
+                    new Comment() { ChurchId = 2, Text = "Комментарий средний", DateCreated = DateTime.UtcNow },
+                    new Comment() { ChurchId = 2, Text = "Комментарий хороший", DateCreated = DateTime.UtcNow },
+                    new Comment() { ChurchId = 2, Text = "Комментарий очень хороший", DateCreated = DateTime.UtcNow },
                 };
 
                 _context.Comments.AddRange(churches);

@@ -22,9 +22,9 @@ namespace NevskyFond.Encyclopedia.Data.Seeders
             {
                 var churches = new List<Church>
                 {
-                    new Church() { CityId = 1, Name = "Храм Василия Блаженного", DateCreation = DateTime.Now },
-                    new Church() { CityId = 1, Name = "Храм Христа Спасителя", DateCreation = DateTime.Now },
-                    new Church() { CityId = 1, Name = "Храм Покрова Пресвятой Богородицы", DateCreation = DateTime.Now }
+                    new Church() { CityId = 1, Name = "Храм Василия Блаженного", DateCreation = DateTime.UtcNow },
+                    new Church() { CityId = 1, Name = "Храм Христа Спасителя", DateCreation = DateTime.UtcNow },
+                    new Church() { CityId = 1, Name = "Храм Покрова Пресвятой Богородицы", DateCreation = DateTime.UtcNow }
                 };
 
                 _context.Churchs.AddRange(churches);
